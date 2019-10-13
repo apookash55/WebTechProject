@@ -6,7 +6,6 @@
     <title>Signup</title>
   </head>
   <body>
-    <h1>SIGNUP</h1>
     <form id="signup" method="post" onsubmit="return validate()">
       <fieldset class="form-group">
         <legend>Personal Information</legend>
@@ -41,10 +40,11 @@
           alert("Passwords is not matching!!");
           return false;
         }
-        if(p.length < 8) {
+        if(p.length < 8 && cp.length < 8) {
           alert("Password length should be greater than 8");
           return false;
         }
+        return true;
       }
     </script>
   </body>
