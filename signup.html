@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <meta charset="utf-8">
+    <title>Signup</title>
+  </head>
+  <body>
+    <h1>SIGNUP</h1>
+    <form id="signup" method="post" onsubmit="return validate()">
+      <fieldset class="form-group">
+        <legend>Personal Information</legend>
+        <label for="fname">First Name:</label><br>
+        <input class="form-control" id="fname" type="text" name="fname" placeholder="FirstName" required>
+        <br>
+        <label for="lname">Last Name:</label><br>
+        <input class="form-control" id="lname" type="text" name="lname" placeholder="LastName" required>
+        <br>
+        <label for="dob">Date of Birth:</label><br>
+        <input class="form-control" id="dob" type="date" name="dob" required>
+      </fieldset>
+      <fieldset class="form-group">
+        <legend>Login Information</legend>
+        <label for="uname">Username:</label><br>
+        <input class="form-control" id="uname" type="text" name="uname" placeholder="Username" required>
+        <br>
+        <label for="pword">Password:</label><br>
+        <input class="form-control" id="pword" type="password" name="pword" required>
+        <br>
+        <label for="cpword">Confirm Password:</label><br>
+        <input class="form-control" id="cpword" type="password" name="cpword" required>
+      </fieldset>
+      <button class="btn-primary" type="submit">Submit</button>
+      <button class="btn-primary" type="reset">Reset</button>
+    </form>
+    <script type="text/javascript">
+      var p = document.getElementById("signup").elements.namedItem("pword").value;
+      var cp = document.getElementById("signup").elements.namedItem("cpword").value;
+      function validate() {
+        if(p != cp) {
+          alert("Passwords is not matching!!");
+          return false;
+        }
+        if(p.length < 8) {
+          alert("Password length should be greater than 8");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
